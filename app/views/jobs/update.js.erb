@@ -1,2 +1,9 @@
+
+
+
 $("#unclaimed_jobs").remove()
 $("#claimed_jobs").append('You\'ve successfully claimed this job!')
+
+
+$("#active_jobs").append("<p><%= @job.title %></p><p><%= @job.description %></p>")
+$('#job_link_<%=@job.id%>').remove();
