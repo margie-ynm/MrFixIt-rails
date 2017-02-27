@@ -2,29 +2,40 @@
 
 <ul>
 <% current_worker.jobs.each do |job| %>
+
+<% if job.pending %>
 <div id="job_link_<%=job.id%>">
 <li><%= link_to job.title, job_path(job) %></li>
 <p> <%= job.description %> </p>
-<% if job.pending %>
-<p>This job is: pending</p>
-<% elsif job.active %>
-<p>This job is: active</p>
-<% else job.completed%>
-<p>This job is: complete</p>
-<% end %>
-<% if job.pending %>
 <%= link_to "Make this job active", job_path(job, mode: 'active'), :method => 'patch', remote: true  %>
-<% end %>
-<% end %>
 </div>
+<% end %>
+<% end %>
+
 </ul>
 
 <div id="active_jobs">
   <h4>Active Jobs:</h4>
   <% current_worker.jobs.each do |job| %>
-  <% if job.active %>
+    <% if job.active %>
+    <div id="job_link_<%=job.id%>">
+    <p><%= job.title %></p>
+    <p><%= job.description %></p>
+    <%= link_to "Mark this job as complete", job_path(job, mode: 'completed'), :method => 'patch', remote: true %>
+    </div>
+    <% end %>
+  <% end %>
+
+</div>
+
+  <div id="completed_jobs">
+  <% if @jobscompleted.any? %>
+  <h4 id="completed">Completed Jobs</h4>
+  <% end %>
+  <% current_worker.jobs.each do |job| %>
+  <% if job.completed %>
   <p><%= job.title %></p>
   <p><%= job.description %></p>
   <% end %>
   <% end %>
-</div>
+  </div>

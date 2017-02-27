@@ -33,7 +33,13 @@ class JobsController < ApplicationController
     elsif params[:mode] == 'active' && current_worker
       @job.update(pending: false, active: true, worker_id: current_worker.id)
         respond_to do |format|
-          format.html {redirect_to job_path(@job)}
+          format.html {redirect_to worker_path(current_worker)}
+          format.js
+        end
+    elsif params[:mode] == 'completed' && current_worker
+      @job.update(pending: false, active: false, completed: true, worker_id: current_worker.id)
+        respond_to do |format|
+          format.html {redirect_to worker_path(current_worker)}
           format.js
         end
       elsif

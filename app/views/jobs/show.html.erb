@@ -6,8 +6,10 @@
   <p>Someone has already claimed this job; it's currently pending.</p>
 <% else %>
 <div id="unclaimed_jobs">
+  <% if @job.worker_id == nil %>
   <p>No one has claimed this job!</p>
   <%= link_to "click here to claim it now", job_path(@job, mode: 'pending'), :method => "patch", remote: true %>
+  <% end %>
 </div>
 <% end %>
 
