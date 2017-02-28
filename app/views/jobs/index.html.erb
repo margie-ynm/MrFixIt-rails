@@ -1,7 +1,14 @@
+<% if @jobs.any? %>
 <h1>Jobs</h1>
-
-<ul>
   <% @jobs.each do |job| %>
-  <li><%= link_to job.title, job_path(job) %></li>
+  <div class="well list">
+  <h4><%= link_to job.title, job_path(job) %></h4>
+  </div>
   <% end %>
-</ul>
+
+<% else %>
+<div class="well">
+  <p class="text-info">Currently, there are no job posts. Add one now or check in later!</p>
+</div>
+
+<% end %>

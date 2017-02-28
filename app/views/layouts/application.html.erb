@@ -32,12 +32,14 @@
         <% end %>
       </ul>
     </div>
-    <div class="content">
-    <div class="flash-messages">
-      <%= flash[:alert] %>
-      <h3><%= flash[:notice] %></h3>
+    <div class="container">
+      <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, class: [:alert, alert_for(name)] %>
+      <% end %>
+      <div class="content">
+        </div>
+        <%= yield %>
       </div>
-      <%= yield %>
     </div>
   </body>
 </html>
