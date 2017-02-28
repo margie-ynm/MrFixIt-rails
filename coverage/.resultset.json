@@ -1,11 +1,25 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/Guest/Desktop/MrFixIt-rails/spec/models/user_spec.rb": [
+      "/Users/Guest/Desktop/MrFixIt-rails/spec/features/job_pages_spec.rb": [
         1,
         null,
         1,
         1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
         null
       ],
       "/Users/Guest/Desktop/MrFixIt-rails/spec/rails_helper.rb": [
@@ -565,11 +579,16 @@
         1,
         null,
         1,
-        null
-      ],
-      "/Users/Guest/Desktop/MrFixIt-rails/app/models/application_record.rb": [
+        null,
         1,
-        1,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        0,
+        null,
         null
       ],
       "/Users/Guest/Desktop/MrFixIt-rails/app/models/user.rb": [
@@ -578,6 +597,11 @@
         null,
         1,
         null,
+        null
+      ],
+      "/Users/Guest/Desktop/MrFixIt-rails/app/models/application_record.rb": [
+        1,
+        1,
         null
       ],
       "/Users/Guest/Desktop/MrFixIt-rails/app/controllers/application_controller.rb": [
@@ -605,28 +629,35 @@
         1,
         null,
         1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
         0,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        0,
+        null,
         null,
         null,
         1,
         0,
         0,
-        null,
-        null,
-        1,
         0,
-        null,
-        null,
-        1,
         0,
         0,
         0,
         null,
-        0,
-        null,
-        null,
-        null,
-        1,
         0,
         0,
         0,
@@ -635,7 +666,13 @@
         null,
         0,
         0,
+        0,
+        0,
+        0,
         null,
+        null,
+        0,
+        0,
         null,
         null,
         0,
@@ -646,7 +683,7 @@
         1,
         null,
         1,
-        0,
+        1,
         null,
         null,
         null
@@ -661,6 +698,7 @@
       "/Users/Guest/Desktop/MrFixIt-rails/app/controllers/workers_controller.rb": [
         1,
         1,
+        0,
         0,
         0,
         null,
@@ -694,19 +732,59 @@
       "/Users/Guest/Desktop/MrFixIt-rails/app/models/job.rb": [
         1,
         1,
+        null,
+        null,
+        null,
         null
       ],
-      "/Users/Guest/Desktop/MrFixIt-rails/spec/factories.rb": [
-
+      "/Users/Guest/Desktop/MrFixIt-rails/spec/factories/jobs.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/Guest/Desktop/MrFixIt-rails/spec/factories/users.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/Guest/Desktop/MrFixIt-rails/spec/models/job_spec.rb": [
+        null,
+        1,
+        null,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        null
+      ],
+      "/Users/Guest/Desktop/MrFixIt-rails/spec/models/user_spec.rb": [
+        1,
+        null,
+        1,
+        null,
+        null
       ],
       "/Users/Guest/Desktop/MrFixIt-rails/spec/models/worker_spec.rb": [
         1,
         null,
         1,
-        1,
+        null,
         null
       ]
     },
-    "timestamp": 1488074582
+    "timestamp": 1488241047
   }
 }
