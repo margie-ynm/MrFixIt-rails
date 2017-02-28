@@ -23,7 +23,8 @@ group :development, :test do
   gem 'phantomjs'
   gem 'poltergeist'
   gem 'database_cleaner'
-  
+  gem 'selenium-webdriver'
+
 end
 
 group :development do
