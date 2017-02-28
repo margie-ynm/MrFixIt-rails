@@ -39,4 +39,14 @@ require "rails_helper"
       click_on "Make this job active"
       expect(page).to have_content("description 1")
     end
+    it "a worker can mark a job as active", js: true do
+      job = create(:job)
+      visit jobs_path
+      click_link "job 1"
+      click_link "click here to claim it now"
+      visit worker_path(@worker)
+      click_on "Make this job active"
+      click_on "Mark this job as complete"
+      expect(page).to have_content("Completed Jobs")
+    end
   end
