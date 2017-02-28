@@ -20,21 +20,21 @@ require "rails_helper"
       job = create(:job)
       visit jobs_path
       click_link "job 1"
-      click_link "click here to claim it now"
+      click_link "Click here to claim it now"
       expect(page).to have_content("You've successfully claimed this job!")
     end
     it "a worker can mark a job as pending", js: true do
       job = create(:job)
       visit jobs_path
       click_link "job 1"
-      click_link "click here to claim it now"
+      click_link "Click here to claim it now"
       expect(page).to have_content("You've successfully claimed this job!")
     end
     it "a worker can mark a job as active", js: true do
       job = create(:job)
       visit jobs_path
       click_link "job 1"
-      click_link "click here to claim it now"
+      click_link "Click here to claim it now"
       visit worker_path(@worker)
       click_on "Make this job active"
       expect(page).to have_content("description 1")
@@ -43,7 +43,7 @@ require "rails_helper"
       job = create(:job)
       visit jobs_path
       click_link "job 1"
-      click_link "click here to claim it now"
+      click_link "Click here to claim it now"
       visit worker_path(@worker)
       click_on "Make this job active"
       click_on "Mark this job as complete"
