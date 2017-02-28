@@ -1,18 +1,15 @@
 <h1><%= current_worker.email %>'s claimed jobs:</h1>
-
-<ul>
 <% current_worker.jobs.each do |job| %>
-
-<% if job.pending %>
-<div id="job_link_<%=job.id%>">
-<li><%= link_to job.title, job_path(job) %></li>
-<p> <%= job.description %> </p>
-<%= link_to "Make this job active", job_path(job, mode: 'active'), :method => 'patch', remote: true  %>
-</div>
+  <% if job.pending %>
+  <div id="job_link_<%=job.id%>">
+    <div class="well list">
+      <p><%= link_to job.title, job_path(job) %></p>
+      <p> <%= job.description %> </p>
+      <%= link_to "Make this job active", job_path(job, mode: 'active'), :method => 'patch', remote: true  %>
+    </div>
+  </div>
+  <% end %>
 <% end %>
-<% end %>
-
-</ul>
 
 <div id="active_jobs">
   <h4>Active Jobs:</h4>

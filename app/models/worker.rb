@@ -18,4 +18,14 @@ class Worker < ActiveRecord::Base
     end
     job_list
     end
+
+    def self.show_activated(worker)
+      job_list = []
+      worker.jobs.each do |job|
+        if job.active
+          job_list.push(job)
+        end
+      end
+      job_list
+    end
 end

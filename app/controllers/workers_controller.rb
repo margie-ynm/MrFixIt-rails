@@ -2,6 +2,7 @@ class WorkersController < ApplicationController
   def show
     @worker = Worker.find(params[:id])
     @jobscompleted = Worker.show_completed(@worker)
+    @jobsactivated = Worker.show_activated(@worker)
     render :show
   end
 
