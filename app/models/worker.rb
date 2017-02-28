@@ -19,7 +19,7 @@ class Worker < ActiveRecord::Base
     job_list
     end
 
-    def self.show_activated(worker)
+    def self.show_active(worker)
       job_list = []
       worker.jobs.each do |job|
         if job.active

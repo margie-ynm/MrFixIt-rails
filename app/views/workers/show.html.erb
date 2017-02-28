@@ -11,19 +11,24 @@
   <% end %>
 <% end %>
 
+
 <div id="active_jobs">
-  <h4>Active Jobs:</h4>
+  <% if @jobsactive.any? %>
+  <h4 id="activated">Active Jobs:</h4>
+  <% end %>
   <% current_worker.jobs.each do |job| %>
     <% if job.active %>
     <div id="job_link_<%=job.id%>">
-    <p><%= job.title %></p>
+    <div class="well list">
+    <p><%= link_to job.title, job_path(job) %></p>
     <p><%= job.description %></p>
     <%= link_to "Mark this job as complete", job_path(job, mode: 'completed'), :method => 'patch', remote: true %>
     </div>
+    </div>
     <% end %>
   <% end %>
-
 </div>
+
 
   <div id="completed_jobs">
   <% if @jobscompleted.any? %>
@@ -31,8 +36,10 @@
   <% end %>
   <% current_worker.jobs.each do |job| %>
   <% if job.completed %>
-  <p><%= job.title %></p>
+  <div class="well list">
+  <p><%= link_to job.title, job_path(job) %></p>
   <p><%= job.description %></p>
+  </div>
   <% end %>
   <% end %>
   </div>

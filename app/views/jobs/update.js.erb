@@ -5,11 +5,13 @@ $("#unclaimed_jobs").remove()
 $("#claimed_jobs").append('You\'ve successfully claimed this job!')
 
 <% elsif @job.active %>
-$("#active_jobs").append('<div id="job_link_<%=@job.id%>"><p><%= @job.title %></p><p><%= @job.description %></p><%= link_to "Mark this job as complete", job_path(@job, mode: "completed"), :method => "patch", remote: true %>')
+$("#active_jobs").append('<div id="job_link_<%=@job.id%>"><div class="well list"><p><%= link_to @job.title, job_path(@job) %></p><p><%= @job.description %></p><%= link_to "Mark this job as complete", job_path(@job, mode: "completed"), :method => "patch", remote: true %></div>')
 $('#job_link_<%=@job.id%>').remove();
+$('#activated').remove()
+$('#active_jobs').prepend('<h4 id="activated">Active Jobs:</h4>')
 
 <% elsif @job.completed %>
-$("#completed_jobs").append("<p><%= @job.title %></p><p><%= @job.description %></p>")
+$("#completed_jobs").append('<div class="well list"><p><%= link_to @job.title, job_path(@job) %></p><p><%= @job.description %></p></div>')
 $('#job_link_<%=@job.id%>').remove();
 $('#completed').remove()
 $('#completed_jobs').prepend('<h4 id="completed">Completed Jobs</h4>')
